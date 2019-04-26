@@ -1,18 +1,18 @@
 package main;
 
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.ScatterChart;
 import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
-import javafx.scene.chart.ScatterChart;
-import javafx.scene.Node;
 
 import java.util.Set;
 
-public class ScatterPlot {
+public class LearningScatterPlot {
 
-    public static void plot(Stage stage, int[][] points, int categories) {
-        categories++;
+    public static void plot(Stage stage) {
+        int categories = 255;
 
         NumberAxis xAxis = new NumberAxis(0, Start.latticeSize, 0);
         xAxis.setLabel("x");
@@ -33,7 +33,8 @@ public class ScatterPlot {
 
         for (int i = 0; i < Start.latticeSize; i++) {
             for (int j = 0; j < Start.latticeSize; j++) {
-                seriesArray[points[i][j]].getData().add(new XYChart.Data(j+0.5, i+0.5));
+                int color = (int)Math.round(Start.lattice[i][j].learningAbility*(categories-1));
+                seriesArray[color].getData().add(new XYChart.Data(j+0.5, i+0.5));
             }
         }
 
@@ -46,33 +47,10 @@ public class ScatterPlot {
         stage.setScene(scene);
         stage.show();
 
-        int[][] randomIndexes = new int[3][categories];
-        for (int i = 0; i < categories; i++) {
-            randomIndexes[0][i] = i;
-            randomIndexes[1][i] = i;
-            randomIndexes[2][i] = i;
-        }
-        for (int i = 0; i < categories; i++) {
-            int a = randomIndexes[0][i];
-            int b = randomIndexes[1][i];
-            int c = randomIndexes[2][i];
-            int index = Rand.r.nextInt(categories);
-            int index2 = Rand.r.nextInt(categories);
-            int index3 = Rand.r.nextInt(categories);
-            randomIndexes[0][i] = randomIndexes[0][index];
-            randomIndexes[1][i] = randomIndexes[1][index];
-            randomIndexes[2][i] = randomIndexes[2][index];
-            randomIndexes[0][index] = a;
-            randomIndexes[1][index2] = b;
-            randomIndexes[2][index3] = c;
-        }
 
         int size = (int)Math.round(240/(double)Start.latticeSize);
         for (int i = 0; i < categories; i++) {
-            int color = (int)Math.round(255/(double)categories*randomIndexes[0][i]);
-            int color2 = (int)Math.round(255/(double)categories*randomIndexes[1][i]);
-            int color3 = (int)Math.round(255/(double)categories*randomIndexes[2][i]);
-            String c = "rgb("+color+","+color2+","+color3+")";
+            String c = "rgb("+i+","+i+","+i+")";
             Set<Node> nodes = scatterChart.lookupAll(".series" + i);
             for (Node n : nodes) {
                 n.setStyle("-fx-background-color: "+c+","+c+";\n"

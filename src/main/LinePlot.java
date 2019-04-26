@@ -6,20 +6,14 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
 
-import java.util.Arrays;
-
 public class LinePlot {
 
     public  static <T> void plot(Stage stage, T[] data, String dataType) {
-
-
         stage.setTitle("Line plot");
-        //defining the axes
         final NumberAxis xAxis = new NumberAxis();
         final NumberAxis yAxis = new NumberAxis();
         xAxis.setLabel("Generations");
         yAxis.setLabel(dataType);
-        //creating the chart
         final LineChart<Number,Number> lineChart =
                 new LineChart<Number,Number>(xAxis,yAxis);
 

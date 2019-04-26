@@ -37,7 +37,7 @@ public class LanguageCount {
             }
         }
         Start.languages[Start.languageCountIndex++] = l;
-        if(uniqueWords.size()<20){
+        if(uniqueWords.size()<20 && Start.verbatim){
             printUniqueWords(uniqueWords);
         }
     }
