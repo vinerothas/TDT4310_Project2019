@@ -1,0 +1,60 @@
+.status-color0 {
+    -fx-background-color:rgb(0,192,64);
+}
+.status-color1 {
+    -fx-background-color:rgb(255,128,0);
+}
+.status-color2 {
+    -fx-background-color:rgb(128,255,0);
+}
+.status-color3 {
+    -fx-background-color:rgb(150,0,255);
+}
+.status-color4 {
+    -fx-background-color:rgb(255,0,128);
+}
+.status-color5 {
+    -fx-background-color:rgb(0,255,128);
+}
+.status-color6 {
+    -fx-background-color:rgb(128,192,255);
+}
+.status-color7 {
+    -fx-background-color:rgb(255,255,0);
+}
+.status-color8 {
+    -fx-background-color:rgb(255,0,255);
+}
+.status-color9 {
+    -fx-background-color:rgb(0,255,255);
+}
+.status-color10 {
+    -fx-background-color:rgb(192,0,0);
+}
+.status-color11 {
+    -fx-background-color:rgb(0,192,0);
+}
+.status-color12 {
+    -fx-background-color:rgb(0,0,192);
+}
+.status-color13 {
+    -fx-background-color:rgb(192,64,0);
+}
+.status-color14 {
+    -fx-background-color:rgb(64,192,0);
+}
+.status-color15 {
+    -fx-background-color:rgb(100,0,200);
+}
+.status-color16 {
+    -fx-background-color:rgb(192,0,64);
+}
+.status-color17 {
+    -fx-background-color:rgb(240,190,50);
+}
+.status-color18 {
+    -fx-background-color:rgb(220,220,220);
+}
+.status-color19 {
+    -fx-background-color:rgb(140,140,140);
+}
